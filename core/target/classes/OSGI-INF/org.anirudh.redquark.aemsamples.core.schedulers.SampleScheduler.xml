@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="org.anirudh.redquark.aemsamples.core.schedulers.SampleScheduler" activate="activate" deactivate="deactivate">
+        <implementation class="org.anirudh.redquark.aemsamples.core.schedulers.SampleScheduler"/>
+        <service servicefactory="false">
+            <provide interface="java.lang.Runnable"/>
+        </service>
+        <property name="service.enabled" type="Boolean" value="true"/>
+        <property name="scheduler.expression" value="0 1 0 ? * *"/>
+        <property name="scheduler.concurrent" type="Boolean" value="false"/>
+        <property name="service.vendor" value="SampleVendor"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.schedulers.SampleScheduler"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+    </scr:component>
+</components>
