@@ -15,16 +15,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This class demonstrates the use of Sling Servlets which is registered using
- * paths property
+ * This servlet demonstrates the usage of a servlet that is registered via the
+ * resourceType
  */
-@SlingServlet(paths = "/bin/aemsamples/simplepathservlet")
-public class SamplePathServlet extends SlingAllMethodsServlet {
+@SlingServlet(resourceTypes = "weretail/components/structure/page", selectors = "aemsamples", extensions = "html", methods = "GET", metatype = false)
+public class ResourceTypeServlet extends SlingAllMethodsServlet {
 
 	/**
 	 * Generated serialVersionUID
 	 */
-	private static final long serialVersionUID = -7495640011881893396L;
+	private static final long serialVersionUID = 6551099529415028208L;
 
 	/**
 	 * Default logger
@@ -37,13 +37,10 @@ public class SamplePathServlet extends SlingAllMethodsServlet {
 	@Reference
 	private Repository repository;
 
-	/**
-	 * Overridden doGet() method
-	 */
 	@Override
-	protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response) {
+	protected void doGet(final SlingHttpServletRequest requet, SlingHttpServletResponse response) {
 
-		log.info("Inside the doGet method of %s", this.getClass().getCanonicalName());
+		log.info("Inside the doGet method of ResourceTypeServlet");
 
 		/**
 		 * Setting the content type property of response
@@ -85,5 +82,7 @@ public class SamplePathServlet extends SlingAllMethodsServlet {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
+
 }
