@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1526542036928
+Build-Jdk: 1.8.0_161
+Built-By: anirshar
+Bundle-Description: Core bundle for aem-samples
+Bundle-ManifestVersion: 2
+Bundle-Name: aem-samples - Core
+Bundle-SymbolicName: org.anirudh.redquark.aem-samples.core
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.anirudh.redquark.aemsamples.core.filters;version="0.
+ 0.1";uses:="javax.servlet",org.anirudh.redquark.aemsamples.core.listene
+ rs;version="0.0.1";uses:="org.osgi.service.event",org.anirudh.redquark.
+ aemsamples.core.models;version="0.0.1";uses:="javax.annotation,javax.in
+ ject,org.apache.sling.api.resource,org.apache.sling.models.annotations"
+ ,org.anirudh.redquark.aemsamples.core;version="1.0",org.anirudh.redquar
+ k.aemsamples.core.schedulers;version="0.0.1",org.anirudh.redquark.aemsa
+ mples.core.servlets;version="0.0.1";uses:="javax.jcr,org.apache.sling.a
+ pi,org.apache.sling.api.servlets"
+Import-Package: javax.inject;version="0.0.0",javax.annotation,javax.jcr;
+ version="[2.0,3)",javax.servlet,org.apache.sling.api;version="[2.3,3)",
+ org.apache.sling.api.request;version="[2.4,3)",org.apache.sling.api.res
+ ource;version="[2.5,3)",org.apache.sling.api.servlets;version="[2.1,3)"
+ ,org.apache.sling.commons.json;version="[2.0,3)",org.apache.sling.commo
+ ns.osgi;version="[2.2,3)",org.apache.sling.models.annotations;version="
+ [1.0,2)",org.apache.sling.settings;version="[1.3,2)",org.osgi.service.e
+ vent;version="[1.2,2)",org.slf4j;version="[1.5,2)"
+Provide-Capability: osgi.service;effective:=active;objectClass="javax.se
+ rvlet.Servlet";service.vendor=Adobe,osgi.service;effective:=active;obje
+ ctClass="java.lang.Runnable";scheduler.expression="*/30 * * * * ?";sche
+ duler.concurrent=false;service.vendor=Adobe,osgi.service;effective:=act
+ ive;objectClass="javax.servlet.Filter";service.ranking=-700;sling.filte
+ r.scope=REQUEST;service.vendor=Adobe,osgi.service;effective:=active;obj
+ ectClass="org.osgi.service.event.EventHandler";event.topics="org/apache
+ /sling/api/resource/Resource/*";service.vendor=Adobe
+Require-Capability: osgi.service;effective:=active;filter:="(objectClass
+ =javax.jcr.Repository)",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6
+ ))"
+Service-Component: OSGI-INF/org.anirudh.redquark.aemsamples.core.filters
+ .LoggingFilter.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.listen
+ ers.SimpleResourceListener.xml,OSGI-INF/org.anirudh.redquark.aemsamples
+ .core.schedulers.SimpleScheduledTask.xml,OSGI-INF/org.anirudh.redquark.
+ aemsamples.core.servlets.SamplePathServlet.xml
+Sling-Model-Packages: org.anirudh.redquark.aemsamples.core
+Tool: Bnd-2.3.0.201405100607
