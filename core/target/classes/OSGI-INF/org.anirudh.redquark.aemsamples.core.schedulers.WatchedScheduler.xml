@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component name="org.anirudh.redquark.aemsamples.core.schedulers.WatchedScheduler" activate="activate">
+        <implementation class="org.anirudh.redquark.aemsamples.core.schedulers.WatchedScheduler"/>
+        <service servicefactory="false">
+            <provide interface="java.lang.Runnable"/>
+        </service>
+        <property name="scheduler.expression" value="0 * * * * ?"/>
+        <property name="myParameter"/>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.schedulers.WatchedScheduler"/>
+        <reference name="watchFolder" interface="org.anirudh.redquark.aemsamples.core.AEMWatchFolder" cardinality="1..1" policy="static" bind="bindWatchFolder" unbind="unbindWatchFolder"/>
+    </scr:component>
+</components>

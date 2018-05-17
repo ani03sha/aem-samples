@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1526571908354
+Bnd-LastModified: 1526575485407
 Build-Jdk: 1.8.0_171
 Built-By: anirshar
 Bundle-Description: Core bundle for aem-samples
@@ -8,71 +8,77 @@ Bundle-Name: aem-samples - Core
 Bundle-SymbolicName: org.anirudh.redquark.aem-samples.core
 Bundle-Version: 0.0.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
-Export-Package: org.anirudh.redquark.aemsamples.core.constants;version="
- 0.0.1",org.anirudh.redquark.aemsamples.core;version="1.0";uses:="com.da
- y.cq.wcm.api,com.day.cq.wcm.msm.api,org.apache.sling.api.resource",org.
+Export-Package: org.anirudh.redquark.aemsamples.core;version="1.0";uses:
+ ="com.day.cq.wcm.api,com.day.cq.wcm.msm.api,org.apache.sling.api.resour
+ ce",org.anirudh.redquark.aemsamples.core.constants;version="0.0.1",org.
  anirudh.redquark.aemsamples.core.filters;version="0.0.1";uses:="javax.s
  ervlet",org.anirudh.redquark.aemsamples.core.http;version="0.0.1",org.a
  nirudh.redquark.aemsamples.core.listeners;version="0.0.1";uses:="org.os
  gi.service.event",org.anirudh.redquark.aemsamples.core.models;version="
  0.0.1",org.anirudh.redquark.aemsamples.core.schedulers;version="0.0.1";
- uses:="org.apache.sling.api.resource,org.apache.sling.commons.scheduler
- ,org.osgi.service.component,org.slf4j",org.anirudh.redquark.aemsamples.
- core.servlets;version="0.0.1";uses:="com.day.cq.wcm.msm.api,javax.jcr,o
- rg.apache.sling.api,org.apache.sling.api.servlets",org.anirudh.redquark
- .aemsamples.core.utils;version="0.0.1";uses:="org.anirudh.redquark.aems
- amples.core.models"
+ uses:="org.anirudh.redquark.aemsamples.core,org.apache.sling.api.resour
+ ce,org.apache.sling.commons.scheduler,org.osgi.service.component,org.sl
+ f4j",org.anirudh.redquark.aemsamples.core.servlets;version="0.0.1";uses
+ :="com.day.cq.wcm.msm.api,javax.jcr,org.apache.sling.api,org.apache.sli
+ ng.api.servlets",org.anirudh.redquark.aemsamples.core.utils;version="0.
+ 0.1";uses:="org.anirudh.redquark.aemsamples.core.models"
 Import-Package: com.day.cq.wcm.api;version="[1.2,2)",com.day.cq.wcm.msm.
  api;version="[5.7,6)",com.fasterxml.jackson.core;version="[2.8,3)",com.
  fasterxml.jackson.databind;version="[2.8,3)",javax.jcr;version="[2.0,3)
- ",javax.mail,javax.mail.internet,javax.management,javax.servlet,org.apa
- che.commons.lang.builder;version="[2.5,3)",org.apache.sling.api;version
- ="[2.3,3)",org.apache.sling.api.request;version="[2.4,3)",org.apache.sl
- ing.api.resource;version="[2.5,3)",org.apache.sling.api.servlets;versio
- n="[2.1,3)",org.apache.sling.api.wrappers;version="[2.5,3)",org.apache.
- sling.commons.json;version="[2.0,3)",org.apache.sling.commons.json.io;v
- ersion="[2.0,3)",org.apache.sling.commons.osgi;version="[2.2,3)",org.ap
- ache.sling.commons.scheduler;version="[2.3,3)",org.osgi.framework;versi
- on="[1.5,2)",org.osgi.service.component;version="[1.1,2)",org.osgi.serv
- ice.event;version="[1.2,2)",org.slf4j;version="[1.5,2)",javax.inject;ve
- rsion="0.0.0"
-Provide-Capability: osgi.service;effective:=active;objectClass="javax.se
- rvlet.Servlet";service.vendor=Adobe,osgi.service;effective:=active;obje
- ctClass="java.lang.Runnable";service.vendor=Adobe,osgi.service;effectiv
- e:=active;objectClass="com.day.cq.wcm.msm.api.LiveActionFactory";liveAc
- tionName=customLiveAction;service.vendor=Adobe,osgi.service;effective:=
- active;objectClass="java.lang.Runnable";scheduler.expression="*/30 * * 
- * * ?";scheduler.concurrent=false;service.vendor=Adobe,osgi.service;eff
- ective:=active;objectClass="org.osgi.service.event.EventHandler";event.
- topics="com/day/cq/wcm/core/page";service.vendor=Adobe,osgi.service;eff
- ective:=active;objectClass="java.lang.Runnable";service.enabled=true;sc
- heduler.expression="0 1 0 ? * *";scheduler.concurrent=false;service.ven
- dor=SampleVendor,osgi.service;effective:=active;objectClass="javax.serv
- let.Filter";service.ranking=-700;sling.filter.scope=REQUEST;service.ven
- dor=Adobe,osgi.service;effective:=active;objectClass="org.osgi.service.
- event.EventHandler";event.topics="org/apache/sling/api/resource/Resourc
- e/*";service.vendor=Adobe
+ ",javax.mail,javax.mail.internet,javax.management,javax.servlet,org.ani
+ rudh.redquark.aemsamples.core;version="[1.0,1.1)",org.apache.commons.la
+ ng.builder;version="[2.5,3)",org.apache.sling.api;version="[2.3,3)",org
+ .apache.sling.api.request;version="[2.4,3)",org.apache.sling.api.resour
+ ce;version="[2.5,3)",org.apache.sling.api.servlets;version="[2.1,3)",or
+ g.apache.sling.api.wrappers;version="[2.5,3)",org.apache.sling.commons.
+ json;version="[2.0,3)",org.apache.sling.commons.json.io;version="[2.0,3
+ )",org.apache.sling.commons.osgi;version="[2.2,3)",org.apache.sling.com
+ mons.scheduler;version="[2.3,3)",org.osgi.framework;version="[1.5,2)",o
+ rg.osgi.service.component;version="[1.1,2)",org.osgi.service.event;vers
+ ion="[1.2,2)",org.slf4j;version="[1.5,2)",javax.inject;version="0.0.0"
+Provide-Capability: osgi.service;effective:=active;objectClass="org.anir
+ udh.redquark.aemsamples.core.AEMWatchFolder";service.vendor=Adobe,osgi.
+ service;effective:=active;objectClass="javax.servlet.Servlet";service.v
+ endor=Adobe,osgi.service;effective:=active;objectClass="javax.servlet.F
+ ilter";service.ranking=-700;sling.filter.scope=REQUEST;service.vendor=A
+ dobe,osgi.service;effective:=active;objectClass="org.osgi.service.event
+ .EventHandler";event.topics="org/apache/sling/api/resource/Resource/*";
+ service.vendor=Adobe,osgi.service;effective:=active;objectClass="java.l
+ ang.Runnable";scheduler.expression="0 * * * * ?";service.vendor=Adobe,o
+ sgi.service;effective:=active;objectClass="java.lang.Runnable";service.
+ vendor=Adobe,osgi.service;effective:=active;objectClass="com.day.cq.wcm
+ .msm.api.LiveActionFactory";liveActionName=customLiveAction;service.ven
+ dor=Adobe,osgi.service;effective:=active;objectClass="java.lang.Runnabl
+ e";scheduler.expression="*/30 * * * * ?";scheduler.concurrent=false;ser
+ vice.vendor=Adobe,osgi.service;effective:=active;objectClass="org.osgi.
+ service.event.EventHandler";event.topics="com/day/cq/wcm/core/page";ser
+ vice.vendor=Adobe,osgi.service;effective:=active;objectClass="java.lang
+ .Runnable";service.enabled=true;scheduler.expression="0 1 0 ? * *";sche
+ duler.concurrent=false;service.vendor=SampleVendor
 Require-Capability: osgi.service;effective:=active;filter:="(objectClass
  =org.apache.sling.commons.scheduler.Scheduler)",osgi.service;effective:
- =active;filter:="(objectClass=com.day.cq.wcm.msm.api.LiveRelationshipMa
- nager)",osgi.service;effective:=active;filter:="(objectClass=org.apache
- .sling.api.resource.ResourceResolverFactory)",osgi.service;effective:=a
- ctive;filter:="(objectClass=javax.jcr.Repository)",osgi.ee;filter:="(&(
- osgi.ee=JavaSE)(version=1.6))"
+ =active;filter:="(objectClass=org.anirudh.redquark.aemsamples.core.AEMW
+ atchFolder)",osgi.service;effective:=active;filter:="(objectClass=com.d
+ ay.cq.wcm.msm.api.LiveRelationshipManager)",osgi.service;effective:=act
+ ive;filter:="(objectClass=org.apache.sling.api.resource.ResourceResolve
+ rFactory)",osgi.service;effective:=active;filter:="(objectClass=javax.j
+ cr.Repository)",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
 Service-Component: OSGI-INF/org.anirudh.redquark.aemsamples.core.listene
  rs.SimpleResourceListener.xml,OSGI-INF/org.anirudh.redquark.aemsamples.
  core.schedulers.SimpleScheduledTask.xml,OSGI-INF/org.anirudh.redquark.a
  emsamples.core.servlets.RetrieveLCInfoServlet.xml,OSGI-INF/org.anirudh.
  redquark.aemsamples.core.schedulers.SimpleDSComponent.xml,OSGI-INF/org.
- anirudh.redquark.aemsamples.core.CustomRolloutConfigService.xml,OSGI-IN
- F/org.anirudh.redquark.aemsamples.core.schedulers.SampleScheduler.xml,O
- SGI-INF/org.anirudh.redquark.aemsamples.core.filters.LoggingFilter.xml,
- OSGI-INF/org.anirudh.redquark.aemsamples.core.listeners.PageEventListen
- er.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.schedulers.Weather
- Scheduler.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.schedulers.
- CustomScheduledService.xml,OSGI-INF/org.anirudh.redquark.aemsamples.cor
- e.servlets.ResourceTypeServlet.xml,OSGI-INF/org.anirudh.redquark.aemsam
- ples.core.servlets.HandleClaimServlet.xml,OSGI-INF/org.anirudh.redquark
- .aemsamples.core.servlets.SamplePathServlet.xml
+ anirudh.redquark.aemsamples.core.impl.AEMWatchFolderImpl.xml,OSGI-INF/o
+ rg.anirudh.redquark.aemsamples.core.schedulers.WatchedScheduler.xml,OSG
+ I-INF/org.anirudh.redquark.aemsamples.core.CustomRolloutConfigService.x
+ ml,OSGI-INF/org.anirudh.redquark.aemsamples.core.schedulers.SampleSched
+ uler.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.filters.LoggingF
+ ilter.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.listeners.PageE
+ ventListener.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.schedule
+ rs.WeatherScheduler.xml,OSGI-INF/org.anirudh.redquark.aemsamples.core.s
+ chedulers.CustomScheduledService.xml,OSGI-INF/org.anirudh.redquark.aems
+ amples.core.servlets.ResourceTypeServlet.xml,OSGI-INF/org.anirudh.redqu
+ ark.aemsamples.core.servlets.HandleClaimServlet.xml,OSGI-INF/org.anirud
+ h.redquark.aemsamples.core.servlets.SamplePathServlet.xml
 Sling-Model-Packages: org.anirudh.redquark.aemsamples.core
 Tool: Bnd-2.3.0.201405100607

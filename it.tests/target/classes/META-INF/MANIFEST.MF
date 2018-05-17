@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1526571878972
+Bnd-LastModified: 1526575463395
 Build-Jdk: 1.8.0_171
 Built-By: anirshar
 Bundle-Description: Bundles for Integration Tests for aem-samples
