@@ -1,6 +1,8 @@
 org\anirudh\redquark\aemsamples\core\listeners\SimpleResourceListener.class
-org\anirudh\redquark\aemsamples\core\models\HelloWorldModel.class
 org\anirudh\redquark\aemsamples\core\package-info.class
+org\anirudh\redquark\aemsamples\core\servlets\HandleClaimServlet.class
+org\anirudh\redquark\aemsamples\core\models\HelloWorldModel.class
 org\anirudh\redquark\aemsamples\core\servlets\SamplePathServlet.class
 org\anirudh\redquark\aemsamples\core\schedulers\SimpleScheduledTask.class
+org\anirudh\redquark\aemsamples\core\servlets\ResourceTypeServlet.class
 org\anirudh\redquark\aemsamples\core\filters\LoggingFilter.class
