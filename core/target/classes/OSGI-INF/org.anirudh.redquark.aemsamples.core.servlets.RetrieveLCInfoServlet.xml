@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component name="org.anirudh.redquark.aemsamples.core.servlets.RetrieveLCInfoServlet">
+        <implementation class="org.anirudh.redquark.aemsamples.core.servlets.RetrieveLCInfoServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths">
+            /bin/msmutils/retrievelcinfo
+        </property>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.servlets.RetrieveLCInfoServlet"/>
+        <reference name="liveRelationshipManager" interface="com.day.cq.wcm.msm.api.LiveRelationshipManager" cardinality="1..1" policy="static" bind="bindLiveRelationshipManager" unbind="unbindLiveRelationshipManager"/>
+    </scr:component>
+</components>

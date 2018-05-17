@@ -42,6 +42,7 @@ public class SampleScheduler implements Runnable {
 	/**
 	 * Overridden method where the actual application logic will be written
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void run() {
 

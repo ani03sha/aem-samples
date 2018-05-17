@@ -33,6 +33,7 @@ public class WeatherScheduler {
 	/**
 	 * The activate method
 	 */
+	@SuppressWarnings("deprecation")
 	protected void activate(ComponentContext context) {
 
 		/**
