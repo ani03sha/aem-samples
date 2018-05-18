@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component name="org.anirudh.redquark.aemsamples.core.impl.CustomWorkflowStep">
+        <implementation class="org.anirudh.redquark.aemsamples.core.impl.CustomWorkflowStep"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.granite.workflow.exec.WorkflowProcess"/>
+        </service>
+        <property name="service.description" value="Test Email Workflow"/>
+        <property name="process.label" value="Test Email Workflow Process"/>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.impl.CustomWorkflowStep"/>
+        <reference name="messageService" interface="com.day.cq.mailer.MessageGatewayService" cardinality="1..1" policy="static" bind="bindMessageService" unbind="unbindMessageService"/>
+    </scr:component>
+</components>
