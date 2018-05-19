@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1526654790880
-Build-Jdk: 1.8.0_171
+Bnd-LastModified: 1526740127160
+Build-Jdk: 1.8.0_161
 Built-By: anirshar
 Bundle-Description: Bundles for Integration Tests for aem-samples
 Bundle-ManifestVersion: 2
@@ -8,5 +8,11 @@ Bundle-Name: aem-samples - Integration Tests Bundles
 Bundle-SymbolicName: org.anirudh.redquark.aem-samples.it.tests
 Bundle-Version: 0.0.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
+Export-Package: org.anirudh.redquark.aemsamples.it.tests;version="0.0.1"
+ ;uses:="org.apache.sling.junit.annotations,org.junit,org.junit.runner"
+Import-Package: org.anirudh.redquark.aemsamples.core.models;version="[0.
+ 0,1)",org.apache.sling.junit.annotations;version="[1.0,2)",org.apache.s
+ ling.settings;version="[1.3,2)",org.junit,org.junit.runner
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
 Sling-Test-Regexp: .*Test
 Tool: Bnd-2.3.0.201405100607
