@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep">
+    <OCD id="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep" name="%org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep.name" description="%org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep.description">
+        <AD id="process.label" type="String" default="Custom\ Process\ Step\ Label" name="%org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep.process.label.name" description="%org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep.process.label.description"/>
+    </OCD>
+    <Designate pid="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep">
+        <Object ocdref="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep"/>
+    </Designate>
+</metatype:MetaData>

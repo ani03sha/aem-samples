@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component immediate="true" name="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep">
+        <implementation class="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.granite.workflow.exec.WorkflowProcess"/>
+        </service>
+        <property name="service.description" value="Custom Process Step Description"/>
+        <property name="service.vendor" value="Anirudh Sharma"/>
+        <property name="process.label" value="Custom Process Step Label"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.workflows.SampleWorkflowProcessStep"/>
+    </scr:component>
+</components>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component name="org.anirudh.redquark.aemsamples.core.impl.TagsServiceImpl">
+        <implementation class="org.anirudh.redquark.aemsamples.core.impl.TagsServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="org.anirudh.redquark.aemsamples.core.TagsService"/>
+        </service>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.anirudh.redquark.aemsamples.core.impl.TagsServiceImpl"/>
+    </scr:component>
+</components>
