@@ -1,47 +1,106 @@
-/*
- *  Copyright 2015 Adobe Systems Incorporated
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
 package org.anirudh.redquark.aemsamples.core.listeners;
 
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.observation.Event;
+import javax.jcr.observation.EventIterator;
+import javax.jcr.observation.EventListener;
+
+import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Deactivate;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.SlingConstants;
-import org.osgi.service.event.Event;
-import org.osgi.service.event.EventConstants;
-import org.osgi.service.event.EventHandler;
+import org.apache.sling.jcr.api.SlingRepository;
+import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 /**
- * A service to demonstrate how changes in the resource tree
- * can be listened for. It registers an event handler service.
- * The component is activated immediately after the bundle is
- * started through the immediate flag.
- * Please note, that apart from EventHandler services,
- * the immediate flag should not be set on a service.
+ * This class is an example of a simple EventListener which listens some JCR
+ * events and logs them
  */
 @Component(immediate = true)
-@Service(value = EventHandler.class)
-@Property(name = EventConstants.EVENT_TOPIC, value = "org/apache/sling/api/resource/Resource/*")
-public class SimpleResourceListener implements EventHandler {
+@Service(value = EventListener.class)
+public class SimpleResourceListener implements EventListener {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+	/**
+	 * Logger
+	 */
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    public void  handleEvent(final Event event) {
-        logger.debug("Resource event: {} at: {}", event.getTopic(), event.getProperty(SlingConstants.PROPERTY_PATH));
-    }
+	/**
+	 * Injecting the dependency of SlingRepository
+	 */
+	@Reference
+	private SlingRepository repository;
+
+	/**
+	 * Session object
+	 */
+	private Session session;
+
+	/**
+	 * Activate method
+	 * 
+	 * @param context
+	 * @throws Exception
+	 */
+	@SuppressWarnings("deprecation")
+	@Activate
+	public void activate(ComponentContext context) throws Exception {
+
+		log.info("Activating example observation");
+
+		try {
+
+			/**
+			 * Never use loginAdministrative in the production instances. Always create a
+			 * service user and then obtain the session via the created service user
+			 */
+			session = repository.loginAdministrative(null);
+
+			/**
+			 * Getting the event listener's instance in the session object
+			 */
+			session.getWorkspace().getObservationManager().addEventListener(this,
+					Event.PROPERTY_ADDED | Event.NODE_ADDED, "/apps/aemsamples", true, null, null, false);
+
+		} catch (RepositoryException e) {
+
+			log.error(e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * Overridden method that does the session logout
+	 */
+	@Deactivate
+	public void deactivate() {
+
+		if (session != null) {
+			session.logout();
+		}
+	}
+
+	/**
+	 * Overridden method that logs the event at the JCR level - business logic needs
+	 * to be put here
+	 */
+	@Override
+	public void onEvent(EventIterator events) {
+
+		try {
+
+			while (events.hasNext()) {
+
+				log.info("Added: {}", events.nextEvent().getPath());
+			}
+		} catch (RepositoryException e) {
+
+			log.error(e.getMessage(), e);
+		}
+	}
+
 }
-
