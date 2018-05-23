@@ -28,6 +28,7 @@ org\anirudh\redquark\aemsamples\core\schedulers\SimpleDSComponent.class
 org\anirudh\redquark\aemsamples\core\schedulers\WeatherScheduler.class
 org\anirudh\redquark\aemsamples\core\listeners\SimpleResourceListener.class
 org\anirudh\redquark\aemsamples\core\impl\CustomRolloutConfigService$CustomLiveAction.class
+org\anirudh\redquark\aemsamples\core\impl\SearchUsersImpl.class
 org\anirudh\redquark\aemsamples\core\servlets\UserManagementServlet.class
 org\anirudh\redquark\aemsamples\core\servlets\ResourceTypeServlet.class
 org\anirudh\redquark\aemsamples\core\filters\LoggingFilter.class
@@ -48,5 +49,6 @@ org\anirudh\redquark\aemsamples\core\schedulers\WhiteboardScheduler.class
 org\anirudh\redquark\aemsamples\core\impl\AEMWatchFolderImpl.class
 org\anirudh\redquark\aemsamples\core\models\Main.class
 org\anirudh\redquark\aemsamples\core\servlets\SamplePathServlet.class
+org\anirudh\redquark\aemsamples\core\SearchUsers.class
 org\anirudh\redquark\aemsamples\core\models\Wind.class
 org\anirudh\redquark\aemsamples\core\servlets\AuthCheckerServlet.class
