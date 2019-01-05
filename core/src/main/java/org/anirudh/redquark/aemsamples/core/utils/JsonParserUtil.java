@@ -22,7 +22,7 @@ public class JsonParserUtil {
 		objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 		Weather weather = null;
 		try {
-
+			
 			weather = objectMapper.readValue(jsonString, Weather.class);
 
 		} catch (JsonParseException e) {

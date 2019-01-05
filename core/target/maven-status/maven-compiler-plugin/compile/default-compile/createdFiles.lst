@@ -47,6 +47,7 @@ org\anirudh\redquark\aemsamples\core\constants\SchedulingConstants.class
 org\anirudh\redquark\aemsamples\core\CustomRolloutConfigService.class
 org\anirudh\redquark\aemsamples\core\schedulers\WhiteboardScheduler.class
 org\anirudh\redquark\aemsamples\core\impl\AEMWatchFolderImpl.class
+org\anirudh\redquark\aemsamples\core\impl\CustomWorkflowStep.class
 org\anirudh\redquark\aemsamples\core\models\Main.class
 org\anirudh\redquark\aemsamples\core\servlets\SamplePathServlet.class
 org\anirudh\redquark\aemsamples\core\SearchUsers.class
