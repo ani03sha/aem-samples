@@ -1,0 +1,12 @@
+<div 
+	data-sly-test.author="${wcmmode.edit || wcmmode.design}" 
+	class="cq-placeholder section" 
+    data-emptytext="Contact">
+</div>
+
+<div data-sly-use.contact="org.redquark.aem.samples.core.cqcomponents.ContactComponent">
+	<p><b>Name:</b> ${contact.name}</p>
+    <p><b>Email:</b> ${contact.email}</p>
+    <p><b>Phone:</b> ${contact.phone}</p>
+    <p><b>Address:</b> ${contact.address}</p>
+</div>
