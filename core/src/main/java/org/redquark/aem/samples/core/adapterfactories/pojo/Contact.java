@@ -72,4 +72,8 @@ public class Contact {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "Contact [name=" + name + ", email=" + email + ", phone=" + phone + ", address=" + address + "]";
+	}
 }

@@ -16,9 +16,14 @@ import org.slf4j.LoggerFactory;
  * @author Anirudh Sharma
  *
  */
-@Component(name = "Contact Adapter Factory", service = AdapterFactory.class, property = {
-		ADAPTABLES + "=org.apache.sling.api.resource.Resource",
-		ADAPTERS + "=org.redquark.aem.samples.core.adapterfactories.pojo.Contact" })
+@Component(
+		name = "Contact Adapter Factory", 
+		service = AdapterFactory.class, 
+		property = {
+				ADAPTABLES + "=org.apache.sling.api.resource.Resource",
+				ADAPTERS + "=org.redquark.aem.samples.core.adapterfactories.pojo.Contact" 
+				}
+		)
 public class ContactAdapterFactory implements AdapterFactory {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
