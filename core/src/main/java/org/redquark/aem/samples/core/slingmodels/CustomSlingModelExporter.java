@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jcr.Session;
 
@@ -15,10 +14,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.ExporterOption;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -29,66 +30,73 @@ import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * @author Anirudh Sharma
  *
  */
-@Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class CustomSlingModel {
+@Model(
+		adaptables = {
+		SlingHttpServletRequest.class 
+		}, 
+		resourceType = "aem-samples/components/content/slingModel", 
+		defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+	)
+@Exporter(
+		name = "jackson",
+		extensions = "json", 
+		options = {
+				@ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value = "true"),
+				@ExporterOption(name = "SerializationFeature.WRITE_DATES_AS_TIMESTAMPS", value = "false"),
+				}
+		)
+public class CustomSlingModelExporter {
 
 	@Self
 	private SlingHttpServletRequest request;
-
+	
 	@Self
-	@Via("resource")
 	private Resource resource;
-
-	// Always try to use explicit injector (i.e. @ValueMapValue v/s @Inject) as this
-	// reduces the confusion of how the values are being injected
+	
 	@ValueMapValue
 	@Named("jcr:title")
 	@Required
-	@Default(values = "No tile found")
+	@Default(values = "No title found")
 	private String title;
-
+	
 	@ValueMapValue
 	@Optional
 	private String pageTitle;
-
-	// Mark as optional
+	
 	@ValueMapValue
 	@Optional
 	private String navTitle;
-
-	// Provide a default value if the property name does not exist
+	
 	@ValueMapValue
 	@Named("jcr:description")
 	@Default(values = "No description found")
 	private String description;
-
-	// Various data types can be injected\
+	
 	@ValueMapValue
 	@Named("jcr:created")
 	private Calendar createdAt;
-
+	
 	@ValueMapValue
 	@Default(booleanValues = false)
 	private boolean navRoot;
-
-	// Inject OSGi services
-	@Inject
+	
+	// Inject OSGi service
+	@OSGiService
+	@Required
 	private QueryBuilder queryBuilder;
-
-	// Injection will occur over all injectors based on ranking.
+	
 	@SlingObject
+	@Required
 	private ResourceResolver resourceResolver;
-
-	// Internal state populated via @PostConstruct logic
+	
 	private long size;
 	private Page page;
-
+	
 	// PostConstructs are called after all the injection has occurred, but before
 	// the Model object is returned for use.
 	@PostConstruct
@@ -159,11 +167,8 @@ public class CustomSlingModel {
 	}
 
 	/**
-	 * @JsonIgnore is a Jackson Annotation specific to this field that prevents this
-	 *             field from being serialized into the exported JSON
 	 * @return the created at Calendar value.
 	 */
-	@JsonIgnore
 	public Calendar getCreatedAt() {
 		return createdAt;
 	}
