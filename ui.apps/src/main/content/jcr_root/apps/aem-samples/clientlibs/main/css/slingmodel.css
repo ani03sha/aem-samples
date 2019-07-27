@@ -1,0 +1,23 @@
+.aem-samples--content-model {
+        border: solid 8px gainsboro;
+        font-family: sans-serif;
+        margin: 2rem auto;
+        padding: 1rem;
+        width: 30rem;
+    }
+.aem-samples--content-model em {
+        font-size: .8rem;
+        font-style: italic;
+    }
+.aem-samples--content-model p {
+        border-bottom: solid 1px gainsboro;
+        padding-bottom: 1rem;
+        margin-right: 1rem;
+    }
+.aem-samples--content-model a {
+        border: solid 1px gainsboro;
+        display: inline-block;
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+        text-transform: capitalize;
+    }
