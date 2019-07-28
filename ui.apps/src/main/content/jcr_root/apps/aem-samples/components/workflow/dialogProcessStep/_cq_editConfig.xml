@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:dialogMode="floating"
+    cq:inherit="{Boolean}true"
+    jcr:primaryType="cq:EditConfig">
+    <cq:formParameters
+        jcr:description="Logs workflow values to the logs"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Dialog Process Step"
+        PROCESS="org.redquark.aem.samples.core.workflows.impl.DialogProcessStep"
+        PROCESS_AUTO_ADVANCE="true"/>
+</jcr:root>
